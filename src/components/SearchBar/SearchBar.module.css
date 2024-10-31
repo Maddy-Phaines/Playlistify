@@ -1,11 +1,18 @@
 /* SearchBar.module.css */
+* {
+  box-sizing: border-box;
+}
 .container {
   padding: 10px;
   border: 1px solid #ddd;
+  border-radius: 20px;
 }
 
 .searchInput {
   width: 100%;
   padding: 8px;
   font-size: 16px;
+  border-radius: 20px;
+  color: antiquewhite;
+  background-color: #333;
 }
