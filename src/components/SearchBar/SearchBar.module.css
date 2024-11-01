@@ -2,17 +2,37 @@
 * {
   box-sizing: border-box;
 }
-.container {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  border-radius: 25px;
+  padding: 10px 15px;
+  color: #ccc;
+  width: 400px;
 }
 
-.searchInput {
-  width: 100%;
-  padding: 8px;
+.search-bar-home,
+.search-bar-icon,
+.search-bar-playlist {
+  font-size: 18px;
+  color: #ccc;
+  margin: 0 10px;
+}
+
+.search-bar-divider {
+  height: 20px;
+  width: 1px;
+  background-color: #555;
+  margin: 0 10px;
+}
+
+.search-bar-input {
+  background: transparent;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  color: #ccc;
   font-size: 16px;
-  border-radius: 20px;
-  color: antiquewhite;
-  background-color: #333;
+  flex-grow: 1;
 }
