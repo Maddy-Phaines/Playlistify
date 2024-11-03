@@ -2,6 +2,10 @@
 * {
   box-sizing: border-box;
 }
+.searchContainer {
+  display: flex;
+  margin-left: 5px;
+}
 .search-bar-container {
   display: flex;
   align-items: center;
@@ -19,7 +23,20 @@
   color: #ccc;
   margin: 0 10px;
 }
+.homeContainer {
+  background-color: #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
 
+.search-bar-home {
+  font-size: 18px;
+  color: #ccc;
+}
 .search-bar-divider {
   height: 20px;
   width: 1px;
