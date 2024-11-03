@@ -20,6 +20,7 @@ function SearchBar({ query, setQuery, onSearch }) {
             className={styles["search-bar-input"]}
             type="text"
             placeholder="What do you want to play?"
+            value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
 

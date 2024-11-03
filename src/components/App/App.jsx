@@ -6,7 +6,8 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [playList, setPlayList] = useState([]);
   const [newSearch, setNewSearch] = useState("");
-  const handleSearch = () => {
+  const [query, setQuery] = useState("");
+  const handleSearch = (query) => {
     const mockTracks = [
       {
         id: 1,
@@ -42,7 +43,12 @@ function App() {
   return (
     <>
       <h1>PlayListify</h1>
-      <SearchBar onSearch={handleSearch} handleSumbit={handleSubmit} />
+      <SearchBar
+        query={query}
+        setQuery={setQuery}
+        onSearch={handleSearch}
+        handleSumbit={handleSubmit}
+      />
       <Track />
     </>
   );
