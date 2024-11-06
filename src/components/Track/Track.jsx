@@ -1,6 +1,13 @@
 import React from "react";
 import styles from "./Track.module.css";
-function Track({ title, artist, cover, duration }) {
+function Track({
+  title,
+  artist,
+  cover,
+  duration,
+  onAddToPlaylist,
+  onRemoveFromPlaylist,
+}) {
   return (
     <>
       <div className={styles.container}>
@@ -10,7 +17,7 @@ function Track({ title, artist, cover, duration }) {
           <p>{artist}</p>
         </div>
         <div>
-          <button>+</button>
+          {onAddToPlaylist && <button onClick={handleAdd}>+</button>}
           <span>{duration}</span>
         </div>
       </div>

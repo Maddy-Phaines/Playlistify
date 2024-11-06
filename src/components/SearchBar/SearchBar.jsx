@@ -15,15 +15,16 @@ function SearchBar({ query, setQuery, onSearch }) {
           />
         </div>
         <div className={styles["search-bar-container"]}>
-          {/* Search Input */}
-          <input
-            className={styles["search-bar-input"]}
-            type="text"
-            placeholder="What do you want to play?"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-
+          <form>
+            {/* Search Input */}
+            <input
+              className={styles["search-bar-input"]}
+              type="text"
+              placeholder="What do you want to play?"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </form>
           {/* Divider */}
           <div className={styles["search-bar-divider"]}></div>
 

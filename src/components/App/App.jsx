@@ -7,7 +7,12 @@ function App() {
   const [playList, setPlayList] = useState([]);
   const [newSearch, setNewSearch] = useState("");
   const [query, setQuery] = useState("");
-  const handleSearch = (query) => {
+  const handleAdd = ({ target }) => {
+    setPlayList((prev) => {
+      [target.value, ...prev];
+    });
+  };
+  const handleSearch = () => {
     const mockTracks = [
       {
         id: 1,
@@ -31,8 +36,24 @@ function App() {
         duration: "2:51",
       },
     ];
-    setSearchResults(mockResults);
+    setSearchResults(mockTracks);
   };
+
+  const addToPlaylist = (trackId) => {
+    // Find the track to add in searchResults by its ID
+    const trackToAdd = searchResults.find((track) => track.id === trackId);
+    if (trackToAdd) {
+      setPlayList((prevPlaylist) => {
+        // Only add the track if it's not already in the playlist
+        if (!prevPlaylist.find((track) => track.id === trackId)) {
+          return [...prevPlaylist, trackToAdd];
+        }
+        return prevPlaylist; // No change if track already present
+      });
+    }
+  };
+
+  const removeFromPlaylist = (trackId) => {};
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,7 +70,7 @@ function App() {
         onSearch={handleSearch}
         handleSumbit={handleSubmit}
       />
-      <Track />
+      <Track handleAdd={handleAdd} />
     </>
   );
 }
