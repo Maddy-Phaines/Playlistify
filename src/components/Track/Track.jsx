@@ -1,23 +1,20 @@
 import React from "react";
 import styles from "./Track.module.css";
-function Track({
-  title,
-  artist,
-  cover,
-  duration,
-  onAddToPlaylist,
-  onRemoveFromPlaylist,
-}) {
+function Track({ track, onAddToPlaylist }) {
   return (
     <>
       <div className={styles.container}>
-        <img src={cover} />
-        <div>
-          <p>{title}</p>
-          <p>{artist}</p>
+        <img src={track.cover} />
+        <div className={styles.trackInfo}>
+          <p>{track.title}</p>
+          <p>{track.artist}</p>
         </div>
         <div>
-          {onAddToPlaylist && <button onClick={onAddToPlaylist}>+</button>}
+          {onAddToPlaylist && (
+            <button onClick={() => onAddToPlaylist(track.id)}>
+              Add to Playlist
+            </button>
+          )}
           {onRemoveFromPlaylist && (
             <button onClick={onRemoveFromPlaylist}>-</button>
           )}
