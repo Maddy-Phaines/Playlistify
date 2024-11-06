@@ -44,7 +44,7 @@ function App() {
     const trackToAdd = searchResults.find((track) => track.id === trackId);
     if (trackToAdd) {
       setPlayList((prevPlaylist) => {
-        // Only add the track if it's not already in the playlist
+        // Only add the track if not already in the playlist
         if (!prevPlaylist.find((track) => track.id === trackId)) {
           return [...prevPlaylist, trackToAdd];
         }
@@ -53,7 +53,9 @@ function App() {
     }
   };
 
-  const removeFromPlaylist = (trackId) => {};
+  const removeFromPlaylist = (trackId) => {
+    playList.filter((track) => track.id !== trackId);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
