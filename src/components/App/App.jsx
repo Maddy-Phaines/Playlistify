@@ -4,11 +4,11 @@ import Track from "../Track/Track";
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
-  const [playList, setPlayList] = useState([]);
+  const [playlist, setPlaylist] = useState([]);
   const [newSearch, setNewSearch] = useState("");
   const [query, setQuery] = useState("");
   const handleAdd = ({ target }) => {
-    setPlayList((prev) => {
+    setPlaylist((prev) => {
       [target.value, ...prev];
     });
   };
@@ -43,7 +43,7 @@ function App() {
     // Find the track to add in searchResults by its ID
     const trackToAdd = searchResults.find((track) => track.id === trackId);
     if (trackToAdd) {
-      setPlayList((prevPlaylist) => {
+      setPlaylist((prevPlaylist) => {
         // Only add the track if not already in the playlist
         if (!prevPlaylist.find((track) => track.id === trackId)) {
           return [...prevPlaylist, trackToAdd];
@@ -54,7 +54,7 @@ function App() {
   };
 
   const removeFromPlaylist = (trackId) => {
-    playList.filter((track) => track.id !== trackId);
+    playlist.filter((track) => track.id !== trackId);
   };
 
   const handleSubmit = (e) => {
@@ -66,13 +66,8 @@ function App() {
   return (
     <>
       <h1>PlayListify</h1>
-      <SearchBar
-        query={query}
-        setQuery={setQuery}
-        onSearch={handleSearch}
-        handleSumbit={handleSubmit}
-      />
-      <Track handleAdd={handleAdd} />
+      <SearchBar query={query} setQuery={setQuery} onSearch={handleSearch} />
+      <Tracklist tracks={playlist} onRemoveFromPlaylist={removeFromPlaylist} />
     </>
   );
 }

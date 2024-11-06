@@ -17,7 +17,10 @@ function Track({
           <p>{artist}</p>
         </div>
         <div>
-          {onAddToPlaylist && <button onClick={handleAdd}>+</button>}
+          {onAddToPlaylist && <button onClick={onAddToPlaylist}>+</button>}
+          {onRemoveFromPlaylist && (
+            <button onClick={onRemoveFromPlaylist}>-</button>
+          )}
           <span>{duration}</span>
         </div>
       </div>
