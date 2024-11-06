@@ -38,6 +38,30 @@ function App() {
     ];
     setSearchResults(mockTracks);
   };
+  // Sample data for tracks (this could also come from an API call)
+  const [tracks, setTracks] = useState([
+    {
+      id: 1,
+      title: "Taste",
+      artist: "Sabrina Carpenter",
+      cover: "cover1.jpg",
+      duration: "2:37",
+    },
+    {
+      id: 2,
+      title: "Please Please Please",
+      artist: "Sabrina Carpenter",
+      cover: "cover2.jpg",
+      duration: "3:06",
+    },
+    {
+      id: 3,
+      title: "Bad Chem",
+      artist: "Sabrina Carpenter",
+      cover: "cover3.jpg",
+      duration: "2:51",
+    },
+  ]);
 
   const addToPlaylist = (trackId) => {
     // Find the track to add in searchResults by its ID

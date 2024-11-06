@@ -12,4 +12,4 @@ const Tracklist = ({ tracks, onAddToPlaylist }) => {
   );
 };
 
-export default TrackList;
+export default Tracklist;
